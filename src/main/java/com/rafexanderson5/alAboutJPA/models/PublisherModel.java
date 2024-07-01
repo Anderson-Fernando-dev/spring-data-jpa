@@ -27,10 +27,10 @@ public class PublisherModel implements Serializable {
     public PublisherModel() {
     }
 
-
     public UUID getId() {
         return id;
     }
+
 
 
     public String getName() {

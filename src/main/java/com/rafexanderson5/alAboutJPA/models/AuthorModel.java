@@ -19,7 +19,7 @@ public class AuthorModel implements Serializable {
     private UUID id;
 
     @Column(nullable = false, unique = true)
-    private String name;
+    private String title;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToMany(mappedBy = "authors",fetch = FetchType.LAZY)
@@ -32,12 +32,13 @@ public class AuthorModel implements Serializable {
         return id;
     }
 
-    public String getName() {
-        return name;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Set<BookModel> getBooks() {
@@ -47,4 +48,6 @@ public class AuthorModel implements Serializable {
     public void setBooks(Set<BookModel> books) {
         this.books = books;
     }
+
+
 }

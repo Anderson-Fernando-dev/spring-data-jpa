@@ -21,8 +21,8 @@ public class BookModel implements Serializable {
     // não permite campos vazios, devem ser únicos
     private String title;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ManyToOne(fetch = FetchType.LAZY)
+   // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    //@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id")
     private PublisherModel publisher;
 
@@ -42,11 +42,9 @@ public class BookModel implements Serializable {
     public BookModel() {
     }
 
-
     public UUID getId() {
         return id;
     }
-
 
     public String getTitle() {
         return title;
@@ -64,12 +62,12 @@ public class BookModel implements Serializable {
         this.publisher = publisher;
     }
 
-    public Set<AuthorModel> getAuthor() {
+    public Set<AuthorModel> getAuthors() {
         return authors;
     }
 
-    public void setAuthor(Set<AuthorModel> author) {
-        this.authors = author;
+    public void setAuthors(Set<AuthorModel> authors) {
+        this.authors = authors;
     }
 
     public ReviewModel getReview() {
